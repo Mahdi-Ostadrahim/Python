@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from blog.models import Post
 from django.http import HttpResponse, JsonResponse
 
 def index_view(request):

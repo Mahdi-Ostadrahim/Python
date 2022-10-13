@@ -13,7 +13,9 @@ def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
+            formb = form.save(commit=False)
+            formb.name = "unknown"
+            formb.save()
             messages.add_message(request,messages.SUCCESS,'your ticket submitted successfully')
         else:
             messages.add_message(request,messages.ERROR,'your ticket didn\'t submit')

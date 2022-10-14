@@ -32,7 +32,6 @@
     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
-
 <body>
     <header id="header">
         <div class="header-top">
@@ -88,19 +87,27 @@
     </header>
     <!-- #header -->
 
-    {% block content %} {% endblock %} {% if messages %} {% for message in messages %}
+    {% block content %} {% endblock %}
+    {% if messages %} 
+    {% for message in messages %}
     <div class="alert {% if message.tags %} alert-{{message.tags}}{% endif %}">{{message|safe}}</div>
-    {% endfor %} {% endif %} {% if form.errors %}
+    {% endfor %}
+    {% endif %}
+    {% if form.errors %}
     <div class="alert alert-error ">
         <h4>Please fix the following errors</h4>
         <ul>
-            {% for field in form %} {% if field.errors %}
+            {% for field in form %}
+            {% if field.errors %}
             <li>
                 <a href="#id_{{field.name}} " class="error ">{{error|escape}}</a>
             </li>
-            {% endif %} {% endfor %}
+            {% endif %}
+            {% endfor %}
         </ul>
-        {% if form.non_field_errors %} {{form.non_field_errors}} {% endif %}
+        {% if form.non_field_errors %}
+        {{form.non_field_errors}}
+        {% endif %}
     </div>
     {% endif %}
     <footer class="footer-area section-gap">

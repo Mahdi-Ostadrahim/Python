@@ -12,7 +12,8 @@
 
 <body>
     <form action="{% url 'website:test' %}" method="post">
-        {% csrf_token %} {{form.as_p}}
+        {% csrf_token %}
+        {{form.as_p}}
         <button type="submit">submit</button>
     </form>
 </body>

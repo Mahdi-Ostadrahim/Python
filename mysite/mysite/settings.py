@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'website.apps.WebsiteConfig',
     'blog',
     'accounts',
+    'crispy_forms',
 ]
 
 SITE_ID = 2
@@ -93,6 +94,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
+AUTHENTICATION_BACKENDS = ['accounts.models.EmailOrUsernameModelBackend']
 
 TEMPLATES = [
     {
@@ -111,7 +113,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
-
+#AUTHENTICATION_BACKENDS = ('accounts.models.EmailBackend',)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

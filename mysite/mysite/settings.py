@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import mimetypes
 from pathlib import Path
 from tkinter import TRUE
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -183,3 +184,6 @@ INTERNAL_IPS = [
 mimetypes
 mimetypes.add_type("application/javascript", ".js", True)
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}

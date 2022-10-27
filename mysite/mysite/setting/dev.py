@@ -4,7 +4,6 @@ from mysite.settings import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-
 SECRET_KEY = 'django-insecure--=%-7ozj&qzgt7qno&a0qgkj5!a9f33*z(#1ytfgo2!rm)!6j&'
 
 # SECURITY WARNING: don't run with debug turned on in production!

@@ -1,3 +1,4 @@
+from mysite.settings import *
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -5,9 +6,9 @@
 SECRET_KEY = 'django-insecure--=%-7ozj&qzgt7qno&a0qgkj5!a9f33*z(#1ytfgo2!rm)!6j&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mahdior.com','www.mahdior.com']
 
 #INSTALLED_APPS = []
 

@@ -16,7 +16,7 @@ def blog_view(request,**kwargs):
         posts = posts.filter(author__username=kwargs['author_username'])
     if kwargs.get('tag_name') != None:
         posts = posts.filter(tags__name__in=[kwargs['tag_name']])
-    posts = Paginator(posts,3)
+    posts = Paginator(posts,6)
     try:
         page_number = request.GET.get('page')
         posts = posts.get_page(page_number)

@@ -1,9 +1,13 @@
 {% load static %}
-
-<div class="single-sidebar-widget search-widget">
-    <form class="search-form" action="{% url 'blog:search' %}" method="get">
-        <input placeholder="Search Posts" name="s" type="text" onfocus="this.placeholder = ''"
-            onblur="this.placeholder = 'Search Posts'">
-        <button type="submit"><i class="fa fa-search"></i></button>
+<!-- Search Form -->
+<div class="mb-5">
+    <form action="{% url 'blog:search' %}" method="get">
+        <div class="input-group">
+            <input type="text" class="form-control form-control-lg" name="s" placeholder="Keyword">
+            <div class="input-group-append">
+                <button type="submit" class="input-group-text bg-transparent text-primary"><i
+                        class="fa fa-search"></i></button>
+            </div>
+        </div>
     </form>
 </div>

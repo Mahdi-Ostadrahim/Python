@@ -1,24 +1,7 @@
+{% extends 'base.html'%}
 {% load static %}
-<!doctype html>
-
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Signup</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
-</head>
-
-<body class="text-center">
+{% block content %}
+    <!--
     <form class="form-signin" method="post" action="{% url 'accounts:signup' %}">
         {% csrf_token %}
         <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
@@ -37,6 +20,52 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
     </form>
-</body>
-
-</html>
+-->
+    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+    <div class="container py-5">
+    <div class="row align-items-center">
+        <div class="col-lg-7 mb-5 mb-lg-0">
+            <div class="mb-4">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Sign Up For Free</h5>
+                <h1 class="text-white">Create Your Own Account</h1>
+            </div>
+            <p class="text-white">Pay attention to these things when choosing your password
+            </p>
+            <ul class="list-inline text-white m-0">
+                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Your password can’t be too similar to your other personal information</li>
+                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Your password must contain at least 8 characters</li>
+                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Your password can’t be a commonly used password</li>
+                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Your password can’t be entirely numeric</li>
+            </ul>
+        </div>
+    <div class="col-lg-5">
+    <div class="card border-0">
+        <div class="card-header bg-light text-center p-4">
+            <h1 class="m-0">Sign Up Now</h1>
+        </div>
+        <div class="card-body rounded-bottom bg-primary p-5">
+            <form method="post" action="{% url 'accounts:signup' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control border-0 p-4" placeholder="Your name" required="required" />
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control border-0 p-4" placeholder="Your email" required="required" />
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password1" class="form-control border-0 p-4" placeholder="Your Password" required="required" />
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password2" class="form-control border-0 p-4" placeholder="Confirm Password" required="required" />
+                </div>
+                <div>
+                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}

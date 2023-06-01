@@ -1,21 +1,15 @@
- {% load humanize %}
- {% load static %}
-
-<div class="single-sidebar-widget popular-post-widget">
-    <h4 class="popular-title">Popular Posts</h4>
-    <div class="popular-post-list">
-        {% for post in posts %}
-        <div class="single-post-list d-flex flex-row align-items-center">
-            <div class="thumb">
-                <img class="img-fluid" src="{{post.image.url}}" alt="">
-            </div>
-            <div class="details">
-                <a href="{% url 'blog:single' pid=post.id %}">
-                    <h6>{{post.title}}</h6>
-                </a>
-                <p>{{post.published_date|naturaltime}}</p>
-            </div>
+{% load humanize %}
+{% load static %}
+<!-- Recent Post -->
+<div class="mb-5">
+    <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h3>
+    {% for post in posts|slice:":3" %}
+    <a class="d-flex align-items-center text-decoration-none mb-3" href="{% url 'blog:single' pid=post.id %}">
+        <img class="img-fluid rounded" src="{{post.image.url}}" alt="">
+        <div class="pl-3">
+            <h6 class="m-1">{{post.title}}</h6>
+            <small>{{post.published_date|naturaltime}}</small>
         </div>
-        {% endfor %}
-    </div>
+    </a>
+    {% endfor %}
 </div>

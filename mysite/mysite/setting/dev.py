@@ -25,8 +25,15 @@ DATABASES = {
     }
 }
 STATIC_ROOT = BASE_DIR / 'static'
+COMPRESS_ROOT = BASE_DIR / 'static'
 MEDIA_ROOT = BASE_DIR / 'media'
 STATICFILES_DIRS = [
     BASE_DIR / 'statics',
+]
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
 ]
 X_FRAME_OPTIONS = 'SAMEORIGIN'

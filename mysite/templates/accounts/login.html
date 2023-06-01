@@ -1,24 +1,7 @@
+{% extends 'base.html'%}
 {% load static %}
-<!doctype html>
-
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Login</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
-</head>
-
-<body class="text-center">
+{% block content %}
+    <!--
     <div>
         <form class="form-signin" method="post" action="{% url 'accounts:login' %}">
             {% csrf_token %}
@@ -42,6 +25,38 @@
             Password?</button>
         </form>
     </div>
-</body>
-
-</html>
+-->
+    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+    <div class="container py-5">
+    <div class="row align-items-center">
+        <div class="col-lg-7 mb-5 mb-lg-0">
+            <div class="mb-4">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Already Have An Account?</h5>
+                <h1 class="text-white">Login</h1>
+            </div>
+        </div>
+    <div class="col-lg-5">
+    <div class="card border-0">
+        <div class="card-header bg-light text-center p-4">
+            <h1 class="m-0">Login</h1>
+        </div>
+        <div class="card-body rounded-bottom bg-primary p-5">
+            <form method="post" action="{% url 'accounts:login' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control border-0 p-4" placeholder="Your name/email" required="required" />
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control border-0 p-4" placeholder="Your Password" required="required" />
+                </div>
+                <div>
+                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}
